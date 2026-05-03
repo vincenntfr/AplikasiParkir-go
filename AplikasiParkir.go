@@ -1,6 +1,6 @@
 package main
 import "fmt"
 
-fmt.Print("Halo mo")
+fmt.Print("pincuy bogor bau ikan teri")
 
 
