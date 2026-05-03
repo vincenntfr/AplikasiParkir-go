@@ -4,5 +4,3 @@ import "fmt"
 fmt.Print("Halo mo")
 
 
-
-
