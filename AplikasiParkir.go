@@ -1,7 +1,7 @@
 package main
 import "fmt"
 
-fmt.Print("Halo mo")
+fmt.Print("Naila ternate bau ikan teri")
 
 
 
