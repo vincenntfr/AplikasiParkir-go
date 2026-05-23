@@ -81,3 +81,47 @@ func cariPetugas(A arrPetugas, n int, user string) int {
 	}
 	return -1
 }
+func editPetugas(A *arrPetugas, n int) {
+	var user string
+	fmt.Print("Username dicari: ")
+	fmt.Scan(&user)
+	idx := cariPetugas(*A, n, user)
+
+	if idx == -1 {
+		fmt.Println("Petugas tidak ditemukan")
+		return
+	}
+
+	fmt.Print("Nama Baru: ")
+	fmt.Scan(&A[idx].nama)
+	fmt.Print("Password Baru: ")
+	fmt.Scan(&A[idx].password)
+
+	fmt.Print("Data Berhasil Diubah!")
+}
+
+func hapusPetugas(A *arrPetugas, n *int) {
+	var user string
+
+	fmt.Print("Username: ")
+	fmt.Scan(&user)
+
+	idx := cariPetugas(*A, *n, user)
+	if idx == -1 {
+		fmt.Println("Data tidak ditemukan")
+		return
+	}
+	for i := idx; i < *n-1; i++ {
+		A[i] = A[i+1]
+	}
+	*n--
+
+	fmt.Println("Petugas Berhasil Dihapus!")
+}
+
+// TRANSAKSI
+func tambahTransaksi(T *arrTransaksi, n *int) {
+	var x Transaksi
+	fmt.Print("Nomor Polisi: ")
+	fmt.Scan(&x.nopol)
+}
