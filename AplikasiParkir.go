@@ -430,13 +430,10 @@ func main() {
 
 					case 1:
 						tambahTransaksi(&transaksi, &nTransaksi)
-
 					case 2:
 						editTransaksi(&transaksi, nTransaksi)
-
 					case 3:
 						hapusTransaksi(&transaksi, &nTransaksi)
-
 					case 4:
 						fmt.Print("Cari nopol: ")
 						fmt.Scan(&cari)
@@ -444,28 +441,22 @@ func main() {
 					case 5:
 						sortingBiayaAsc(&transaksi, nTransaksi)
 						fmt.Println("Sorting biaya ASC berhasil")
-
 					case 6:
 						sortingBiayaDesc(&transaksi, nTransaksi)
 						fmt.Println("Sorting biaya DESC berhasil")
-
 					case 7:
 						sortingNopolAsc(&transaksi, nTransaksi)
 						fmt.Println("Sorting nopol ASC berhasil")
-
 					case 8:
 						sortingNopolDesc(&transaksi, nTransaksi)
 						fmt.Println("Sorting nopol DESC berhasil")
-
 					case 9:
 						laporan(transaksi, nTransaksi)
-
 					case 10:
 						fmt.Println("Logout petugas berhasil")
 					}
 				}
 			}
-
 		case 3:
 			fmt.Println("Program selesai")
 		}
