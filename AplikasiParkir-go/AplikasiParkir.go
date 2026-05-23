@@ -73,6 +73,11 @@ func tambahPetugas(A *arrPetugas, n *int) {
 	fmt.Println("Petugas Berhasil Ditambahkan!!")
 }
 
-// USSSSusss
-// uss
-// usss
+func cariPetugas(A arrPetugas, n int, user string) int {
+	for i := 0; i < n; i++ {
+		if A[i].usn == user {
+			return i
+		}
+	}
+	return -1
+}
