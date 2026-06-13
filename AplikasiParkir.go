@@ -1,4 +1,5 @@
 package main
+
 import "fmt"
 
 const MAX int = 100
@@ -21,6 +22,8 @@ type arrTransaksi [MAX]Transaksi
 
 //LOGIN
 func loginPetugas(A arrPetugas, n int) bool {
+	// I.S. :
+	// F.S. :
 	var user, pass string
 	fmt.Print("Username: ")
 	fmt.Scan(&user)
@@ -38,6 +41,8 @@ func loginPetugas(A arrPetugas, n int) bool {
 	return false
 }
 func loginAdmin() bool {
+	// I.S. :
+	// F.S. :
 	var user, pass string
 	fmt.Print("Username Admin: ")
 	fmt.Scan(&user)
@@ -56,6 +61,8 @@ func loginAdmin() bool {
 
 //HITUNG BIAYA
 func hitungBiaya(jenis string, durasi int) int {
+	// I.S. :
+	// F.S. :
 	var awal, lanjut int
 	if jenis == "motor" {
 		awal = 3000
@@ -72,6 +79,8 @@ func hitungBiaya(jenis string, durasi int) int {
 
 //PETUGAS
 func tambahPetugas(A *arrPetugas, n *int) {
+	// I.S. :
+	// F.S. :
 	var x Petugas
 
 	fmt.Print("Nama: ")
@@ -89,6 +98,8 @@ func tambahPetugas(A *arrPetugas, n *int) {
 }
 
 func cariPetugas(A arrPetugas, n int, user string) int {
+	// I.S. :
+	// F.S. :
 	for i := 0; i < n; i++ {
 		if A[i].usn == user {
 			return i
@@ -97,6 +108,8 @@ func cariPetugas(A arrPetugas, n int, user string) int {
 	return -1
 }
 func editPetugas(A *arrPetugas, n int) {
+	// I.S. :
+	// F.S. :
 	var user string
 	fmt.Print("Username dicari: ")
 	fmt.Scan(&user)
@@ -116,6 +129,8 @@ func editPetugas(A *arrPetugas, n int) {
 }
 
 func hapusPetugas(A *arrPetugas, n *int) {
+	// I.S. :
+	// F.S. :
 	var user string
 
 	fmt.Print("Username: ")
@@ -136,6 +151,8 @@ func hapusPetugas(A *arrPetugas, n *int) {
 
 // TRANSAKSI
 func tambahTransaksi(T *arrTransaksi, n *int) {
+	// I.S. :
+	// F.S. :
 	var x Transaksi
 	fmt.Print("Nomor Polisi: ")
 	fmt.Scan(&x.nopol)
@@ -166,6 +183,8 @@ func tambahTransaksi(T *arrTransaksi, n *int) {
 	fmt.Println("Transaksi berhasil ditambah")
 }
 func cariTransaksi(T arrTransaksi, n int, nopol string) int {
+	// I.S. :
+	// F.S. :
 	for i := 0; i < n; i++ {
 		if T[i].nopol == nopol {
 			return i
@@ -174,6 +193,8 @@ func cariTransaksi(T arrTransaksi, n int, nopol string) int {
 	return -1
 }
 func editTransaksi(T *arrTransaksi, n int) {
+	// I.S. :
+	// F.S. :
 	var nopol string
 	fmt.Print("Masukan nopol: ")
 	fmt.Scan(&nopol)
@@ -194,6 +215,8 @@ func editTransaksi(T *arrTransaksi, n int) {
 	fmt.Println("Data berhasil diubah")
 }
 func hapusTransaksi(T *arrTransaksi, n *int) {
+	// I.S. :
+	// F.S. :
 	var nopol string
 
 	fmt.Print("Masukan nopol: ")
@@ -214,6 +237,8 @@ func hapusTransaksi(T *arrTransaksi, n *int) {
 
 // SEARCH
 func sequentialSearch(T arrTransaksi, n int, nopol string) {
+	// I.S. :
+	// F.S. :
 	found := false
 	for i := 0; i < n; i++ {
 		if T[i].nopol == nopol {
@@ -229,6 +254,8 @@ func sequentialSearch(T arrTransaksi, n int, nopol string) {
 
 //SORTING BIAYA
 func sortingBiayaAsc(T *arrTransaksi, n int) {
+	// I.S. :
+	// F.S. :
 	var pass, idx, i int
 	var temp Transaksi
 
@@ -245,6 +272,8 @@ func sortingBiayaAsc(T *arrTransaksi, n int) {
 	}
 }
 func sortingBiayaDesc(T *arrTransaksi, n int) {
+	// I.S. :
+	// F.S. :
 	var pass, idx, i int
 	var temp Transaksi
 
@@ -263,6 +292,8 @@ func sortingBiayaDesc(T *arrTransaksi, n int) {
 
 //SORTING NOPOL
 func sortingNopolAsc(T *arrTransaksi, n int) {
+	// I.S. :
+	// F.S. :
 	var pass, i int
 	var temp Transaksi
 
@@ -278,6 +309,8 @@ func sortingNopolAsc(T *arrTransaksi, n int) {
 
 }
 func sortingNopolDesc(T *arrTransaksi, n int) {
+	// I.S. :
+	// F.S. :
 	var pass, i int
 	var temp Transaksi
 
@@ -295,6 +328,8 @@ func sortingNopolDesc(T *arrTransaksi, n int) {
 
 //REKURSIF
 func totalUang(T arrTransaksi, n int) int {
+	// I.S. :
+	// F.S. :
 	if n == 0 {
 		return 0
 	}
@@ -303,6 +338,8 @@ func totalUang(T arrTransaksi, n int) int {
 
 //NILAI EKSTREM
 func nilaiMax(T arrTransaksi, n int) int {
+	// I.S. :
+	// F.S. :
 	max := T[0].biaya
 
 	for i := 1; i < n; i++ {
@@ -313,6 +350,8 @@ func nilaiMax(T arrTransaksi, n int) int {
 	return max
 }
 func nilaiMin(T arrTransaksi, n int) int {
+	// I.S. :
+	// F.S. :
 	min := T[0].biaya
 
 	for i := 1; i < n; i++ {
@@ -325,6 +364,8 @@ func nilaiMin(T arrTransaksi, n int) int {
 
 // LAPORAN
 func laporan(T arrTransaksi, n int) {
+	// I.S. :
+	// F.S. :
 	fmt.Println("===== LAPORAN =====")
 
 	for i := 0; i < n; i++ {
