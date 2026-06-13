@@ -22,8 +22,8 @@ type arrTransaksi [MAX]Transaksi
 
 //LOGIN
 func loginPetugas(A arrPetugas, n int) bool {
-	// I.S. :
-	// F.S. :
+	// I.S. : Data petugas tersedia dalam array A sebanyak n elemen.
+	// F.S. : Mengembalikan true jika username dan password sesuai, false jika tidak.
 	var user, pass string
 	fmt.Print("Username: ")
 	fmt.Scan(&user)
@@ -41,8 +41,8 @@ func loginPetugas(A arrPetugas, n int) bool {
 	return false
 }
 func loginAdmin() bool {
-	// I.S. :
-	// F.S. :
+	// I.S. : Admin belum melakukan login.
+	// F.S. : Mengembalikan true jika username dan password admin benar, false jika salah.
 	var user, pass string
 	fmt.Print("Username Admin: ")
 	fmt.Scan(&user)
@@ -61,8 +61,8 @@ func loginAdmin() bool {
 
 //HITUNG BIAYA
 func hitungBiaya(jenis string, durasi int) int {
-	// I.S. :
-	// F.S. :
+	// I.S. : Jenis kendaraan dan durasi parkir telah diketahui.
+	// F.S. : Mengembalikan total biaya parkir sesuai jenis kendaraan dan durasi.
 	var awal, lanjut int
 	if jenis == "motor" {
 		awal = 3000
@@ -79,8 +79,8 @@ func hitungBiaya(jenis string, durasi int) int {
 
 //PETUGAS
 func tambahPetugas(A *arrPetugas, n *int) {
-	// I.S. :
-	// F.S. :
+	// I.S. : Array petugas berisi *n data petugas.
+	// F.S. : Data petugas baru ditambahkan ke array dan jumlah data bertambah 1.
 	var x Petugas
 
 	fmt.Print("Nama: ")
@@ -98,8 +98,8 @@ func tambahPetugas(A *arrPetugas, n *int) {
 }
 
 func cariPetugas(A arrPetugas, n int, user string) int {
-	// I.S. :
-	// F.S. :
+	// I.S. : Array petugas berisi n data dan username yang dicari tersedia.
+	// F.S. : Mengembalikan indeks petugas jika ditemukan, -1 jika tidak ditemukan.
 	for i := 0; i < n; i++ {
 		if A[i].usn == user {
 			return i
@@ -108,8 +108,8 @@ func cariPetugas(A arrPetugas, n int, user string) int {
 	return -1
 }
 func editPetugas(A *arrPetugas, n int) {
-	// I.S. :
-	// F.S. :
+	// I.S. : Terdapat data petugas dalam array sebanyak n elemen.
+	// F.S. : Data petugas yang dipilih berhasil diubah jika ditemukan.
 	var user string
 	fmt.Print("Username dicari: ")
 	fmt.Scan(&user)
@@ -129,8 +129,8 @@ func editPetugas(A *arrPetugas, n int) {
 }
 
 func hapusPetugas(A *arrPetugas, n *int) {
-	// I.S. :
-	// F.S. :
+	// I.S. : Array petugas berisi *n data petugas.
+	// F.S. : Data petugas yang dipilih dihapus dan jumlah data berkurang 1.
 	var user string
 
 	fmt.Print("Username: ")
@@ -151,8 +151,8 @@ func hapusPetugas(A *arrPetugas, n *int) {
 
 // TRANSAKSI
 func tambahTransaksi(T *arrTransaksi, n *int) {
-	// I.S. :
-	// F.S. :
+	// I.S. : Array transaksi berisi *n data transaksi.
+	// F.S. : Data transaksi baru ditambahkan dan jumlah data bertambah 1.
 	var x Transaksi
 	fmt.Print("Nomor Polisi: ")
 	fmt.Scan(&x.nopol)
@@ -183,8 +183,8 @@ func tambahTransaksi(T *arrTransaksi, n *int) {
 	fmt.Println("Transaksi berhasil ditambah")
 }
 func cariTransaksi(T arrTransaksi, n int, nopol string) int {
-	// I.S. :
-	// F.S. :
+	// I.S. : Array transaksi berisi n data transaksi dan nopol yang dicari diketahui.
+	// F.S. : Mengembalikan indeks transaksi jika ditemukan, -1 jika tidak ditemukan.
 	for i := 0; i < n; i++ {
 		if T[i].nopol == nopol {
 			return i
@@ -193,8 +193,8 @@ func cariTransaksi(T arrTransaksi, n int, nopol string) int {
 	return -1
 }
 func editTransaksi(T *arrTransaksi, n int) {
-	// I.S. :
-	// F.S. :
+	// I.S. : Terdapat data transaksi dalam array sebanyak n elemen.
+	// F.S. : Data transaksi yang dipilih berhasil diubah dan biaya dihitung ulang.
 	var nopol string
 	fmt.Print("Masukan nopol: ")
 	fmt.Scan(&nopol)
@@ -215,8 +215,8 @@ func editTransaksi(T *arrTransaksi, n int) {
 	fmt.Println("Data berhasil diubah")
 }
 func hapusTransaksi(T *arrTransaksi, n *int) {
-	// I.S. :
-	// F.S. :
+	// I.S. : Array transaksi berisi *n data transaksi.
+	// F.S. : Data transaksi yang dipilih dihapus dan jumlah data berkurang 1.
 	var nopol string
 
 	fmt.Print("Masukan nopol: ")
@@ -237,8 +237,8 @@ func hapusTransaksi(T *arrTransaksi, n *int) {
 
 // SEARCH
 func sequentialSearch(T arrTransaksi, n int, nopol string) {
-	// I.S. :
-	// F.S. :
+	// I.S. : Array transaksi berisi n data transaksi dan nopol yang dicari diketahui.
+	// F.S. : Menampilkan data transaksi yang sesuai atau pesan tidak ditemukan.
 	found := false
 	for i := 0; i < n; i++ {
 		if T[i].nopol == nopol {
@@ -254,8 +254,8 @@ func sequentialSearch(T arrTransaksi, n int, nopol string) {
 
 //SORTING BIAYA
 func sortingBiayaAsc(T *arrTransaksi, n int) {
-	// I.S. :
-	// F.S. :
+	// I.S. : Data transaksi belum terurut berdasarkan biaya.
+	// F.S. : Data transaksi terurut berdasarkan biaya secara ascending.
 	var pass, idx, i int
 	var temp Transaksi
 
@@ -272,8 +272,8 @@ func sortingBiayaAsc(T *arrTransaksi, n int) {
 	}
 }
 func sortingBiayaDesc(T *arrTransaksi, n int) {
-	// I.S. :
-	// F.S. :
+	// I.S. : Data transaksi belum terurut berdasarkan biaya.
+	// F.S. : Data transaksi terurut berdasarkan biaya secara descending.
 	var pass, idx, i int
 	var temp Transaksi
 
@@ -292,8 +292,8 @@ func sortingBiayaDesc(T *arrTransaksi, n int) {
 
 //SORTING NOPOL
 func sortingNopolAsc(T *arrTransaksi, n int) {
-	// I.S. :
-	// F.S. :
+	// I.S. : Data transaksi belum terurut berdasarkan nomor polisi.
+	// F.S. : Data transaksi terurut berdasarkan nomor polisi secara ascending.
 	var pass, i int
 	var temp Transaksi
 
@@ -309,8 +309,8 @@ func sortingNopolAsc(T *arrTransaksi, n int) {
 
 }
 func sortingNopolDesc(T *arrTransaksi, n int) {
-	// I.S. :
-	// F.S. :
+	// I.S. : Data transaksi belum terurut berdasarkan nomor polisi.
+	// F.S. : Data transaksi terurut berdasarkan nomor polisi secara descending.
 	var pass, i int
 	var temp Transaksi
 
@@ -328,8 +328,8 @@ func sortingNopolDesc(T *arrTransaksi, n int) {
 
 //REKURSIF
 func totalUang(T arrTransaksi, n int) int {
-	// I.S. :
-	// F.S. :
+	// I.S. : Terdapat n data transaksi dengan biaya masing-masing.
+	// F.S. : Mengembalikan total seluruh biaya transaksi secara rekursif.
 	if n == 0 {
 		return 0
 	}
@@ -338,8 +338,8 @@ func totalUang(T arrTransaksi, n int) int {
 
 //NILAI EKSTREM
 func nilaiMax(T arrTransaksi, n int) int {
-	// I.S. :
-	// F.S. :
+	// I.S. : Terdapat n data transaksi.
+	// F.S. : Mengembalikan nilai biaya terbesar dari seluruh transaksi.
 	max := T[0].biaya
 
 	for i := 1; i < n; i++ {
@@ -350,8 +350,8 @@ func nilaiMax(T arrTransaksi, n int) int {
 	return max
 }
 func nilaiMin(T arrTransaksi, n int) int {
-	// I.S. :
-	// F.S. :
+	// I.S. : Terdapat n data transaksi.
+	// F.S. : Mengembalikan nilai biaya terkecil dari seluruh transaksi.
 	min := T[0].biaya
 
 	for i := 1; i < n; i++ {
@@ -364,8 +364,8 @@ func nilaiMin(T arrTransaksi, n int) int {
 
 // LAPORAN
 func laporan(T arrTransaksi, n int) {
-	// I.S. :
-	// F.S. :
+	// I.S. : Terdapat n data transaksi yang tersimpan.
+	// F.S. : Menampilkan seluruh data transaksi, biaya maksimum, biaya minimum, dan total pendapatan.
 	fmt.Println("===== LAPORAN =====")
 
 	for i := 0; i < n; i++ {
